@@ -3,8 +3,8 @@ import uuid from 'uuid';
 const ADD_COMMENT = 'ADD_COMMENT';
 const EDIT_COMMENT = 'EDIT_COMMENT';
 const DELETE_COMMENT = 'DELETE_COMMENT';
-const THUMB_UP = 'THUMB_UP';
-const THUMB_DOWN = 'THUMB_DOWN';
+const THUMB_UP_COMMENT = 'THUMB_UP';
+const THUMB_DOWN_COMMENT = 'THUMB_DOWN';
 
 function addComment(text) {
     return {
@@ -29,15 +29,15 @@ function deleteComment(id) {
 }
 function thumbUp(id) {
     return {
-        type: ADD_COMMENT,
+        type: THUMB_UP_COMMENT,
         text,
         id: id,
         votes: votes +1
     }
 }
-function addComment(id) {
+function thumbDown(id) {
     return {
-        type: ADD_COMMENT,
+        type: THUMB_DOWN_COMMENT,
         text,
         id: id,
         votes: votes -1
